@@ -9,7 +9,7 @@ The goal of this assignment is to reinforce the importance of unit testing in Ja
  - Re-familiarize yourself with [A2: Object-ification](https://github.com/CSC120-instructors/CSC120-A2) to remember how the `Computer` and `ResaleShop` classes should function. 
 
 ## Step 2: Writing Unit Tests
-Write your `jUnit` tests inside `ShopTest.java`, using **assertions** to validate expected outputs. Remember, there are 20 bugs in the provided solution and your job is to use unit testing to identify them. 
+Write your `jUnit` tests inside `ShopTest.java`, using **assertions** to validate expected outputs. Remember, there are bugs in the provided solution and your job is to use unit testing to identify them. 
 
 ## Step 3: Identify Bugs
 In `bugLog.md` list the 10 bugs you identified. For each, briefly explain the bug and identify which unit test(s) in `ShopTest.java` reveal the bug. For example: 
