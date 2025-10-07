@@ -10,18 +10,8 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 ## Assignment Points:
 
-_____ 10 pts: The class meaningfully implements each of the tests in described in the `TrainTest.java`:
+_____ 10 pts: The class contains at least 10 unit tests that identify bugs in the solution. Each bug is documented in the log
 
-      _____ `testEngineConstructor()`
-      _____ `testEngineGo()`
-      _____ `testCarAddPassenger()`
-      _____ `testCarRemovePassenger()`
-      _____ `testPassengerBoardCarWithSpace()`
-      _____ `testPassengerBoardCarFull()`
-      _____ `testTrainConstructor()`
-      _____ `testTrainPassengerCount()`
-      _____ `testTrainGetCar()`
-      _____ `testTrainPrintManifest()`
 
 ## General Items:
 
