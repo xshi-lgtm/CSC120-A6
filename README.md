@@ -1,5 +1,5 @@
 # A6: Unit Testing
-The goal of this assignment is to reinforce the importance of unit testing in Java using `JUnit`. You are provided with a solution to A2 written in Java. The solution compiles and runs, but contains 10 bugs. Your task is to design and implement a suite of unit tests in `ShopTest.java` to identify the bugs. You will edit `ShopTest.java` but **SHOULD NOT edit** `Computer.java` nor `ResaleShop.java`.     
+The goal of this assignment is to reinforce the importance of unit testing in Java using `JUnit`. You are provided with a solution to A2 written in Java. The solution compiles and runs, but contains 10 bugs. Your task is to design and implement a suite of unit tests in `ShopTest.java` to identify the bugs. You will edit `ShopTest.java` but we recomment you **DO NOT edit** `Computer.java` nor `ResaleShop.java` (or if you do keep careful track of what you changed).     
 
 
 
