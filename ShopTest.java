@@ -5,15 +5,18 @@ import java.io.PrintStream;
 
 import org.junit.Test;
 
+/**
+ * Unit tests that surface the intentional bugs in Computer and ResaleShop.
+ */
 public class ShopTest {
 
     // tests in Computer
 
-    /*
+    /**
      * Tests if the description matches the value passed in the constructor.
      */
     @Test
-    public void test_computer_constructor_description(){
+    public void test_computer_constructor_description() {
         Computer newComputer = new Computer(
             "2019 MacBook Pro", 
             "Intel", 
@@ -25,11 +28,11 @@ public class ShopTest {
         assertEquals("2019 MacBook Pro", newComputer.description);
     }
 
-    /*
+    /**
      * Tests if the processor type matches the constructor input.
      */
     @Test
-    public void test_computer_constructor_processorType(){
+    public void test_computer_constructor_processorType() {
         Computer newComputer = new Computer(
             "2019 MacBook Pro", 
             "Intel", 
@@ -41,11 +44,11 @@ public class ShopTest {
         assertEquals("Intel", newComputer.processorType);
     }
 
-    /*
+    /**
      * Tests if the hard drive capacity matches the constructor input.
      */
     @Test
-    public void test_computer_constructor_hardDriveCapacity(){
+    public void test_computer_constructor_hardDriveCapacity() {
         Computer newComputer = new Computer(
             "2019 MacBook Pro", 
             "Intel", 
@@ -57,11 +60,11 @@ public class ShopTest {
         assertEquals(256, newComputer.hardDriveCapacity);
     }
 
-    /*
+    /**
      * Tests if the memory is stored correctly from the constructor.
      */
     @Test
-    public void test_computer_constructor_memory(){
+    public void test_computer_constructor_memory() {
         Computer newComputer = new Computer(
             "2019 MacBook Pro", 
             "Intel", 
@@ -73,11 +76,11 @@ public class ShopTest {
         assertEquals(20, newComputer.memory);
     }
 
-    /*
+    /**
      * Tests if the operating system matches the constructor input.
      */
     @Test
-    public void test_computer_constructor_operatingSystem(){
+    public void test_computer_constructor_operatingSystem() {
         Computer newComputer = new Computer(
             "2019 MacBook Pro", 
             "Intel", 
@@ -89,11 +92,11 @@ public class ShopTest {
         assertEquals("High Sierra", newComputer.operatingSystem);
     }
 
-    /*
+    /**
      * Tests if the year made matches the constructor input.
      */
     @Test
-    public void test_computer_constructor_yearMade(){
+    public void test_computer_constructor_yearMade() {
         Computer newComputer = new Computer(
             "2019 MacBook Pro", 
             "Intel", 
@@ -105,11 +108,11 @@ public class ShopTest {
         assertEquals(2019, newComputer.yearMade);
     }
 
-    /*
+    /**
      * Tests if the price matches the constructor input.
      */
     @Test
-    public void test_computer_constructor_price(){
+    public void test_computer_constructor_price() {
         Computer newComputer = new Computer(
             "2019 MacBook Pro", 
             "Intel", 
@@ -121,11 +124,11 @@ public class ShopTest {
         assertEquals(1000, newComputer.price);
     }
 
-    /*
+    /**
      * Tests if setOS() correctly updates the OS.
      */
     @Test
-    public void test_setOS_updates(){
+    public void test_setOS_updates() {
         Computer newComputer = new Computer(
             "2019 MacBook Pro", 
             "Intel", 
@@ -138,11 +141,11 @@ public class ShopTest {
         assertEquals("Monterey", newComputer.operatingSystem);
     }
 
-    /*
+    /**
      * Tests if setPrice() correctly updates the price.
      */
     @Test 
-    public void test_setPrice_updates(){
+    public void test_setPrice_updates() {
         Computer newComputer = new Computer(
             "2019 MacBook Pro", 
             "Intel", 
@@ -155,11 +158,11 @@ public class ShopTest {
         assertEquals(2000, newComputer.price);
     }
 
-    /*
+    /**
      * Tests if getYear() returns the correct year.
      */
     @Test
-    public void test_getYear(){
+    public void test_getYear() {
         Computer newComputer = new Computer(
             "2019 MacBook Pro", 
             "Intel", 
@@ -171,11 +174,11 @@ public class ShopTest {
         assertEquals(2019, newComputer.getYear()); 
     }
 
-    /*
+    /**
      * Tests if toString() includes all main attributes.
      */
     @Test
-    public void test_toString_containsKeyInfo(){
+    public void test_toString_containsKeyInfo() {
         Computer newComputer = new Computer(
             "D",
             "Intel",
@@ -194,12 +197,12 @@ public class ShopTest {
         assertTrue(s.contains("2019"));
     }
 
-    /*
+    /**
      * Tests if toString() ends with the price given to the constructor.
      * Expected: "...1000" at the end; current code prints "...0".
      */
     @Test
-    public void test_toString_includes_price_from_constructor(){
+    public void test_toString_includes_price_from_constructor() {
         Computer newComputer = new Computer(
             "2019 MacBook Pro",
             "Intel",
@@ -216,17 +219,17 @@ public class ShopTest {
 
     // tests in ResaleShop
 
-    /*
+    /**
      * Tests if the shop starts with one computer in inventory.
      */
     @Test
-    public void test_ResaleShop_constructor(){
+    public void test_ResaleShop_constructor() {
         ResaleShop myShop = new ResaleShop();
         assertEquals(1, myShop.inventory.size());
         assertEquals("2019 MacBook Pro", myShop.inventory.get(0).description);
     }
 
-    /*
+    /**
      * Tests if buy() adds the same instance instead of replacing it.
      */
     @Test
@@ -250,7 +253,7 @@ public class ShopTest {
         assertTrue(foundDesc);
     }
 
-    /*
+    /**
      * Tests if buying the same computer twice throws an exception.
      */
     @Test(expected = Exception.class)
@@ -261,7 +264,7 @@ public class ShopTest {
         shop.buy(x);
     }
 
-    /*
+    /**
      * Tests if selling removes a computer that exists in the shop.
      */
     @Test
@@ -272,7 +275,7 @@ public class ShopTest {
         assertEquals(0, shop.inventory.size());
     }
 
-    /*
+    /**
      * Tests if selling a computer not in the shop throws an exception.
      */
     @Test(expected = Exception.class)
@@ -282,22 +285,22 @@ public class ShopTest {
         shop.sell(ghost);
     }
 
-    /*
+    /**
      * Tests if printInventory() throws IndexOutOfBounds due to <= condition.
      */
     @Test(expected = IndexOutOfBoundsException.class)
-    public void test_printInventory_offByOne_shouldThrow(){
+    public void test_printInventory_offByOne_shouldThrow() {
         ResaleShop shop = new ResaleShop();
         shop.inventory.add(new Computer("C1","Intel",128,8,"OS",2017,200));
         shop.inventory.add(new Computer("C2","Intel",128,8,"OS",2018,300));
         shop.printInventory();
     }
 
-    /*
+    /**
      * Tests if printInventory() prints "Inventory is empty" when empty.
      */
     @Test
-    public void test_printInventory_emptyMessage(){
+    public void test_printInventory_emptyMessage() {
         ResaleShop shop = new ResaleShop();
         shop.inventory.clear();
 
@@ -312,7 +315,7 @@ public class ShopTest {
         assertTrue(outContent.toString().contains("Inventory is empty"));
     }
 
-    /*
+    /**
      * Tests if refurbish() assigns correct prices for each year range.
      */
     @Test
@@ -335,7 +338,7 @@ public class ShopTest {
         shop.refurbish(y2020, "None");  assertEquals(1000, y2020.price);
     }
 
-    /*
+    /**
      * Tests if refurbish() updates OS when given a new OS.
      */
     @Test
@@ -348,7 +351,7 @@ public class ShopTest {
         assertEquals("Windows 11", newComputer.operatingSystem);
     }
 
-    /*
+    /**
      * Tests if refurbish() does not change OS when newOS is "None".
      */
     @Test
@@ -361,26 +364,18 @@ public class ShopTest {
         assertEquals("Windows 10", newComputer.operatingSystem);
     }
 
-    /*
-     * Tests that fields are directly writable from outside (should not be allowed).
-     * This exposes the lack of encapsulation as a design bug.
+    /**
+     * Tests that Computer fields are private to prevent external mutation.
      */
     @Test
-    public void test_direct_field_write_is_possible() {
-        Computer newComputer = new Computer(
-            "2019 MacBook Pro", 
-            "Intel", 
-            256, 
-            16, 
-            "High Sierra", 
-            2019, 
-            1000);
-        newComputer.operatingSystem = "HackedOS";
-        newComputer.price = -42;
-        assertEquals("HackedOS", newComputer.operatingSystem);
-        assertEquals(-42, newComputer.price);
+    public void test_fields_should_be_private() {
+        Field[] fields = Computer.class.getDeclaredFields();
+        for (Field field : fields) {
+            assertTrue("Field should be private: " + field.getName(), Modifier.isPrivate(field.getModifiers()));
+        }
     }
-    /*
+
+    /**
      * Tests that refurbish() should not change OS when newOS is "None"
      * even if it's a new String object. This reveals the '!=' string check bug.
      */

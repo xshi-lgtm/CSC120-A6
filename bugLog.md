@@ -11,8 +11,8 @@ Brief description: setOS(String) sets the OS to "None" instead of the provided v
 Failed unit test: test_setOS_updates()
 
 ## Bug 4
-Brief description: toString() ends with the wrong price because the constructor overwrites price.
-Failed unit test: test_toString_includes_price_from_constructor()
+Brief description: Computer fields are not private, so callers can mutate them directly (breaks encapsulation).
+Failed unit test: test_fields_should_be_private()
 
 ## Bug 5
 Brief description: ResaleShop.buy(Computer) does not add the same instance; it creates a new Computer instead.
